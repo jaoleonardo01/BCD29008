@@ -46,11 +46,13 @@ Disciplina(código, nome, CH)
 Professor(documento, nome)
 
 
+
 Currículo(implantação,disciplinascursadas)
 # disciplinacursadas referencia DisciplinasCursadas(código)
 
 
 Campus(nome)
+
 
 
 Semestre(ano, semestre)
