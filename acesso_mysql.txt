@@ -1,0 +1,15 @@
+Para liberar acesso com usuário root sem senha para outros hosts:
+
+- ajustar o /etc/mysql/my.cnf para que o campo 'bind-address' fique '= 0.0.0.0';
+- reiniciar o serviço mysql;
+- executar o comando 'mysql' e executar o seguinte sql 'GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY '' WITH GRANT OPTION';
+- depois executar o sql 'FLUSH PRIVILEGES';
+
+
+Se quisermos alterar a senha do usuário root:
+
+- executar o comando sql;
+- utilizar a base mysql: 'mysql> use mysql;';
+- executar o comando 'mysql' e executar o seguinte sql "UPDATE user SET Password=PASSWORD('nova_senha') WHERE User='root';";
+- depois executar o sql 'FLUSH PRIVILEGES';
+- para logar com senha: 'mysql -u root -p';
